@@ -1,0 +1,14 @@
+# Ignore dbt compiled files and logs
+dbt_project/target/
+dbt_project/dbt_packages/
+dbt_project/logs/
+*.log
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore environment variables/keys
+.env
+*.p8
+*.pem

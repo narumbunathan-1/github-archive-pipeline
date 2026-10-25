@@ -1,0 +1,44 @@
+version: 2
+models:
+  - name: hub_user
+    columns:
+      - name: user_hk
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        tests:
+          - not_null
+
+  - name: hub_repo
+    columns:
+      - name: repo_hk
+        tests:
+          - unique
+          - not_null
+      - name: repo_id
+        tests:
+          - not_null
+
+  - name: hub_event
+    columns:
+      - name: event_hk
+        tests:
+          - unique
+          - not_null
+      - name: event_id
+        tests:
+          - not_null
+
+  - name: link_user_repo_event
+    columns:
+      - name: link_hk
+        tests:
+          - unique
+          - not_null
+      - name: event_hk
+        tests:
+          - not_null
+          - relationships:
+              to: ref('hub_event')
+              field: event_hk
